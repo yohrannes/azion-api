@@ -1,4 +1,5 @@
 #!/bin/bash
+./cli.sh $SUBDOMAIN $DOMAIN $TARGET_DOMAIN $ENV $PERSONAL_TOKEN
 
 ZONE_ID=$(./list-dns-zones.sh | jq -r --arg name "$DOMAIN" '.results[] | select(.name==$name) | .id')
 
@@ -9,7 +10,7 @@ curl --request POST \
   --header 'Content-Type: application/json' \
   --data "{
     \"description\": \"\",
-    \"name\": \"teste-azion-api\",
+    \"name\": \"${SUBDOMAIN}\",
     \"ttl\": 300,
     \"type\": \"CNAME\",
     \"rdata\": [

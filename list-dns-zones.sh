@@ -1,5 +1,5 @@
 #!/bin/bash
-./cli.sh $SUBDOMAIN $DOMAIN $TARGET_DOMAIN $ENV $PERSONAL_TOKEN
+source ./cli.conf
 
 curl --request GET \
   --url https://api.azion.com/v4/workspace/dns/zones \

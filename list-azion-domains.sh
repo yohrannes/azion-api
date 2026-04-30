@@ -1,5 +1,5 @@
 #!/bin/bash
-./cli.sh $SUBDOMAIN $DOMAIN $TARGET_DOMAIN $ENV $PERSONAL_TOKEN
+source ./cli.conf
 
 curl --location 'https://api.azionapi.net/domains?page_size=100' \
   --header 'Accept: application/json; version=3' \

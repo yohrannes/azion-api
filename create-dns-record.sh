@@ -1,5 +1,5 @@
 #!/bin/bash
-./cli.sh $SUBDOMAIN $DOMAIN $TARGET_DOMAIN $ENV $PERSONAL_TOKEN
+source ./cli.conf
 
 ZONE_ID=$(./list-dns-zones.sh | jq -r --arg name "$DOMAIN" '.results[] | select(.name==$name) | .id')
 
